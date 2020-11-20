@@ -15,11 +15,10 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Input file: ");
         String path = sc.nextLine();
-        ReadingMatrixFromFile read = new ReadingMatrixFromFile();
         MatrixOpertions variant = new MatrixOpertions();
 
         List<String> variantlist = new ArrayList<>();
-        variantlist = read.readingMatrixFromFile(path);
+        variantlist = variant.readingMatrixFromFile(path);
         variant.printArrayList(variantlist);
 
 
@@ -28,8 +27,10 @@ public class Main {
         int [] values = splitmatrix.getValues(variantlist);
 
         CondorcetMethod condorcet = new CondorcetMethod();
-
         condorcet.condorcetprocess(values,candidates);
+
+        BordMethod bord = new BordMethod();
+        bord.bordMethodProcess(values,candidates);
 
     }
 }

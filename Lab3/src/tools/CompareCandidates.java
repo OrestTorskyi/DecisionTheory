@@ -53,17 +53,51 @@ public class CompareCandidates {
 
         if(a_count == Math.max(Math.max(a_count,b_count),c_count))
             {
-                    System.out.println("Condorcet method result: the best candidate is 'A'.");
+                    System.out.println("Method result: the best candidate is 'A'.");
             }
         else if(b_count == Math.max(Math.max(a_count,b_count),c_count))
             {
-                System.out.println("Condorcet method result: the best candidate is 'B'.");
+                System.out.println("Method result: the best candidate is 'B'.");
             }
         else
             {
-                System.out.println("Condorcet method result: the best candidate is 'C'.");
+                System.out.println("Method result: the best candidate is 'C'.");
             }
 
+    }
+
+    public int [] setMarksForCandidate(String[][] candidates_list, String candidate)
+    {
+        int [] candidate_marks = new int[candidates_list.length];
+        String [] line = new String[candidates_list[0].length];
+        List<String> candidates_row = new ArrayList<>();
+        int point = 0;
+
+
+        for(int i = 0; i < candidates_list.length; i++)
+        {
+            for(int j = 0; j < candidates_list[i].length; j++)
+            {
+                line[j] = candidates_list[i][j];
+                candidates_row.add(line[j]);
+            }
+            point = candidates_row.indexOf(candidate);
+
+            if(point == 0)
+            {
+                candidate_marks[i] = 3;
+            }
+            else if(point == 1)
+            {
+                candidate_marks[i] = 2;
+            }
+            else
+            {
+                candidate_marks[i] = 1;
+            }
+        }
+
+        return candidate_marks;
     }
 
 
