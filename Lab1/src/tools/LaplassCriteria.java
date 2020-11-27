@@ -15,12 +15,11 @@ public class LaplassCriteria {
         double row_sum = 0;
         double max_value = 0;
         List<Integer> solution = new ArrayList<>();
-        solution.add(1);
         MatrixOperations matrix = new MatrixOperations();
         FindBestSolution find = new FindBestSolution();
 
 
-        System.out.println("--------------------Laplass Criteria--------------------");
+        System.out.println("--------------------Laplace Criteria--------------------");
 
 
         for (int i = 0; i < array.length; i++) {
@@ -40,7 +39,8 @@ public class LaplassCriteria {
 
 
 
-        find.findingbest(total_sum_rows);
+        solution = find.findingbest(total_sum_rows);
+        matrix.printRowIn2DMatrix(array,solution);
 
         System.out.println("--------------------------------------------------------");
 

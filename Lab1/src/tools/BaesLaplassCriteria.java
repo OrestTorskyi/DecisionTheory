@@ -14,13 +14,12 @@ public class BaesLaplassCriteria {
         double[] total_values = new double[array.length];
         double max_value = 0;
         List<Integer> solution = new ArrayList<>();
-        solution.add(1);
         MatrixOperations matrix = new MatrixOperations();
         FindBestSolution find = new FindBestSolution();
 
-        System.out.println("--------------------Baes-Laplass Criteria--------------------");
+        System.out.println("--------------------Bayes-Laplace Criteria--------------------");
 
-        System.out.println("Baes-Laplass formula: A[1]*k1 + A[2] * k2 + A[3] * k3 - for each row in array");
+        System.out.println("Bayes-Laplace formula: A[1]*k1 + A[2] * k2 + A[3] * k3 - for each row in array");
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
@@ -36,8 +35,8 @@ public class BaesLaplassCriteria {
 
 
 
-        find.findingbest(total_values);
-
+        solution = find.findingbest(total_values);
+        matrix.printRowIn2DMatrix(array,solution);
         System.out.println("-------------------------------------------------------------");
     }
 }

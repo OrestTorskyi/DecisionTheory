@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class GurvitzCriteria {
+public class GurvitsCriteria {
 
     public void gurvitzprocess( int [][] array, double k)
     {
@@ -18,11 +18,10 @@ public class GurvitzCriteria {
         double k_r = 1 - k;
         double max_value = 0;
         List<Integer> solution = new ArrayList<>();
-        solution.add(1);
         MatrixOperations matrix = new MatrixOperations();
         FindBestSolution find = new FindBestSolution();
 
-        System.out.println("--------------------Gurvitz Criteria--------------------");
+        System.out.println("--------------------Gurvits Criteria--------------------");
         min_each_rows_values = matrix.minValuesInRowDouble(array);
 
         System.out.println("The minimum of each row:");
@@ -55,8 +54,8 @@ public class GurvitzCriteria {
 
 
 
-        find.findingbest(sum_min_max);
-
+        solution = find.findingbest(sum_min_max);
+        matrix.printRowIn2DMatrix(array,solution);
 
         System.out.println("--------------------------------------------------------");
 

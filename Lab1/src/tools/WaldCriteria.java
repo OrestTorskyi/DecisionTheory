@@ -12,7 +12,6 @@ public class WaldCriteria {
         double [] a = new double [array.length];
 
         List<Integer>solution = new ArrayList<>();
-        solution.add(1);
         MatrixOperations matrix = new MatrixOperations();
         FindBestSolution find = new FindBestSolution();
 
@@ -22,7 +21,9 @@ public class WaldCriteria {
         System.out.println("The minimum of each row:");
         matrix.printMatrixDouble1D(a);
 
-        find.findingbest(a);
+        solution = find.findingbest(a);
+
+        matrix.printRowIn2DMatrix(array,solution);
 
 
         System.out.println("-----------------------------------------------------");

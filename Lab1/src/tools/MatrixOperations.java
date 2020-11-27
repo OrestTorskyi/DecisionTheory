@@ -129,6 +129,25 @@ public class MatrixOperations {
         System.out.print("\n");
     }
 
+    public void printRowIn2DMatrix (int [][] array, List <Integer> solution)
+    {
+        System.out.println("The best solution:");
+        for (int i : solution)
+        {
+            if(solution.indexOf(i) > 0)
+            {
+                System.out.print("or ");
+            }
+            System.out.print("row №" + i + ": ");
+            for (int j = 0; j < array.length; j++)
+            {
+
+                System.out.print(array[i - 1][j] + " ");
+            }
+        }
+        System.out.println("\n");
+
+    }
 
     public void printMatrixInt2D (int [][] array)
     {
