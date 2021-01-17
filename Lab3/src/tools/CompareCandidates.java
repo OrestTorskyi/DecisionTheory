@@ -82,6 +82,7 @@ public class CompareCandidates {
                 candidates_row.add(line[j]);
             }
             point = candidates_row.indexOf(candidate);
+            candidates_row.clear();
 
             if(point == 0)
             {
